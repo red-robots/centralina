@@ -54,6 +54,7 @@
 											
 												if ( ! empty( $image ) ): ?>
 												<div class="fleximg blocksx <?php echo $class; ?>">
+													<div class="slideImage" style="background-image:url('<?php echo $image['url']; ?>')"></div>
 													<img src="<?php echo $image['url']; ?>"
 													     alt="<?php echo $image['alt']; ?>"
 													      />

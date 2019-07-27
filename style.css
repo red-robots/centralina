@@ -1026,9 +1026,9 @@ body.stickyNav #tester {
 
 #home-row1 {
   width: 100%;
-  /*height: 438px;*/
   float: left;
   margin-top: 6px;
+  overflow: hidden;
 }
 
 #home-row1-links {
@@ -1055,8 +1055,8 @@ body.stickyNav #tester {
 }
 
 #home-row1-content {
-  width: 1030px;
-  /*height: 438px;*/
+  max-width: 1030px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -1064,8 +1064,7 @@ body.stickyNav #tester {
 }
 
 #home-row1-box {
-  width: 1030px;
-  /*height: 438px;*/
+  width: 100%;
   float: left;
   position: relative;
 }
@@ -1296,7 +1295,6 @@ body.stickyNav #tester {
 
 #home-box2 {
   width: 340px;
-  height: 270px;
   float: left;
   text-align: center;
   border-right: 1px solid #CECECE;
@@ -1335,7 +1333,6 @@ body.stickyNav #tester {
 
 #home-box3 {
   width: 340px;
-  height: 270px;
   float: left;
   text-align: center;
   border-right: 1px solid #CECECE;
@@ -1373,7 +1370,6 @@ body.stickyNav #tester {
 
 #home-box4 {
   width: 340px;
-  height: 270px;
   float: right;
   text-align: center;
   border-right: 1px solid #CECECE;
@@ -1409,6 +1405,12 @@ body.stickyNav #tester {
 
 #home-box4:hover h2 a {
   color: #026027;
+}
+
+#home-box2,
+#home-box3,
+#home-box4 {
+  height: 290px;
 }
 
 #tagline {
@@ -3092,9 +3094,45 @@ ol.pings h3 {
   z-index: 900;
   width: 100%;
   float: left;
+  height: 450px;
   position: relative;
+  overflow: hidden;
+  background: #0874B4;
 }
-
+@media (min-width: 960px) {
+  #home-slider {
+    height: 430px;
+  }
+}
+#home-slider .slideImage {
+  width: 100%;
+  float: left;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 960px) {
+  #home-slider .slideImage {
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+#home-slider img {
+  display: none !important;
+}
+#home-slider .flexslider,
+#home-slider .slides,
+#home-slider .slides li,
+#home-slider .fleximg,
+#home-slider .flex-viewport {
+  height: 100%;
+}
 #slidenav {
   position: absolute;
   right: 0px;
@@ -3156,15 +3194,50 @@ ol.pings h3 {
 }
 
 .newbox {
-  /*background-color: #0374B4;*/
   padding: 2%;
   color: #fff;
   font-size: 20px;
 }
 
 .newbox.hasinfo {
-  width: 26%;
-  float: right;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  color: #FFF;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 0;
+}
+@media (min-width: 960px) {
+  .newbox.hasinfo {
+    position: relative;
+    width: 29%;
+    float: right;
+    height: 100%;
+    padding: 15px;
+  }
+}
+.newbox.hasinfo .info {
+  background: rgba(5, 112, 184, 0.85);
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  font-size: 18px;
+  width: 100%;
+}
+@media (min-width: 960px) {
+  .newbox.hasinfo .info {
+    background: transparent;
+    width: auto;
+    font-size: 20px;
+    position: static;
+    padding: 0 0;
+  }
+}
+.newbox.hasinfo .info p {
+  margin-top: 0;
 }
 
 .newbox.noinfo {
@@ -3190,7 +3263,13 @@ ol.pings h3 {
 }
 
 .newbox h2 {
-  font-size: 28px;
+  font-size: 23px;
+  margin-bottom: 12px !important;
+}
+@media (min-width: 960px) {
+  .newbox h2 {
+    font-size: 25px;
+  }
 }
 
 .project-box {
@@ -3971,15 +4050,6 @@ html[xmlns] .flexslider2 .slides {
 
  * ====================================================================================================================*/
 @media all and (max-width: 700px) {
-  .newbox.hasinfo {
-    width: 96%;
-    float: right;
-  }
-
-  .newbox.noinfo {
-    width: 0%;
-  }
-
   .fleximg.hasinfo {
     width: 100%;
     float: left;
@@ -4033,11 +4103,6 @@ html[xmlns] .flexslider2 .slides {
 
   #mobile-navigation {
     visibility: visible;
-    height: auto;
-  }
-
-  #home-slider {
-    width: 100%;
     height: auto;
   }
 
@@ -4535,18 +4600,8 @@ html[xmlns] .flexslider2 .slides {
   }
 
   #home-row1-box {
-    width: 90%;
-    height: auto;
+    width: 100%;
     float: left;
-    margin-top: 40px;
-    margin-left: 3%;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: 28px;
-    color: #ffffff;
-    line-height: 25px;
   }
 
   #home-row1-links {
