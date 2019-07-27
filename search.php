@@ -7,7 +7,7 @@ get_header(); ?>
 
 	<div id="main">
 
-<div class="page-content">
+<div class="page-content search-result">
 
 
 <!-- -->

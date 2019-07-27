@@ -9,7 +9,7 @@ get_header(); ?>
 			<div class="container">
      			<h1 class="pagetitle"><?php the_title(); ?></h1>
      			<?php if(get_the_content()) { ?>
-     			<div class="entry-content"><?php //the_content(); ?></div>
+     			<div class="entry-content"><?php the_content(); ?></div>
      			<?php } ?>
      		</div>
 
@@ -24,19 +24,37 @@ get_header(); ?>
 			<div class="container workshop-list">
 				<div class="flexrow clear">
 				<?php while ( $items->have_posts() ) : $items->the_post(); 
+					$logo = get_field('workshop_logo');
 					$content = get_field('workshop_description');
 					$content = ($content) ? strip_shortcodes( strip_tags($content) ) : '';
-					$short_description = ($content) ? shortenText($content,150,".","...") : '';
+					$short_description = ($content) ? shortenText($content,100,".","...") : '';
+					$px = get_bloginfo('template_url') . '/images/square.png';
 					?>
 					<div class="fbox">
-						<h2 class="title"><?php the_title(); ?></h2>
-						<div class="description"><?php echo $short_description; ?></div>
+						<div class="inside clear">
+							<?php if ($logo) { ?>
+							<div class="workshoplogo clear">
+								<span class="imgwrap"><span style="background-image:url('<?php echo $logo['url']?>')"><img src="<?php echo $px; ?>" alt="" /></span></span>
+							</div>		
+							<?php } ?>
+							<h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+							<div class="description"><?php echo $short_description; ?></div>
+							<a href="<?php echo get_permalink(); ?>" class="morebtn">Learn More</a>
+						</div>
 					</div>
 				<?php endwhile; wp_reset_postdata(); ?>
 				</div>
 			</div>	
 			<?php } ?>
 
+			<?php $bottom_section = get_field('bottom_section'); ?>
+			<?php if ($bottom_section) { ?>
+				<div class="container">
+					<div class="hw-bottom clear">
+					<?php echo $bottom_section; ?>
+				</div>
+			</div>	
+			<?php } ?>
 		</div>
 	</div>
 	<?php endwhile; ?>

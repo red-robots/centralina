@@ -9,13 +9,13 @@
 
 
 
-<div id="main-wrapper">
+<div id="main-wrapper" class="page-id-<?php echo get_the_ID();?>">
 
 <div id="main">
 
 
 
-<div class="page-content">
+<div class="page-content clear">
 
 
 
@@ -31,95 +31,92 @@
 
 </div><!-- / page content -->
    
-     
+<div class="container">
  <div id="landing-boxes">
  
- <?php if(get_field('child_pages')): ?>      	
-<?php while(has_sub_field('child_pages')): ?>
+     <?php if(get_field('child_pages')): ?>      	
+    <?php while(has_sub_field('child_pages')): ?>
 
 
 
 
-<?php if(is_page( 'How You Can Help' ) ) { ?>
+    <?php if(is_page( 'How You Can Help' ) ) { ?>
 
-<div class="page-link-box">
-<div class="page-link-box-padding">
-<!-- -->
-<?php
-$post_object = get_sub_field('page');
-if($post_object) :
-    $post = $post_object;
-    // Overwrite $post
-    setup_postdata( $post ); ?>
-<h2 class="no-margin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <div class="page-link-box">
+    <div class="page-link-box-padding">
+    <!-- -->
     <?php
-    // Reset $post so the rest of the page works
-    wp_reset_postdata();
-endif; ?>
-<!-- -->
+    $post_object = get_sub_field('page');
+    if($post_object) :
+        $post = $post_object;
+        // Overwrite $post
+        setup_postdata( $post ); ?>
+    <h2 class="no-margin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php
+        // Reset $post so the rest of the page works
+        wp_reset_postdata();
+    endif; ?>
+    <!-- -->
 
-<div class="page-link-box-photo-wrapper">
-<div class="page-link-box-photo">
-<?php 
-$image = get_sub_field('icon');
-if( !empty($image) ): ?>
-	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> 
-<?php endif; ?>
-</div>      
-            <?php } else { ?>
-            
-<div class="page-link-box">
-<div class="page-link-box-padding">
-<!-- -->
-<?php
-$post_object = get_sub_field('page');
-if($post_object) :
-    $post = $post_object;
-    // Overwrite $post
-    setup_postdata( $post ); ?>
-<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <div class="page-link-box-photo-wrapper">
+    <div class="page-link-box-photo">
+    <?php 
+    $image = get_sub_field('icon');
+    if( !empty($image) ): ?>
+    	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> 
+    <?php endif; ?>
+    </div>      
+                <?php } else { ?>
+                
+    <div class="page-link-box">
+    <div class="page-link-box-padding clear">
+    <!-- -->
     <?php
-    // Reset $post so the rest of the page works
-    wp_reset_postdata();
-endif; ?>
-<!-- -->            
-            
-            <div class="page-link-box-text"><?php the_sub_field("introductory_text"); ?>
+    $post_object = get_sub_field('page');
+    if($post_object) :
+        $post = $post_object;
+        // Overwrite $post
+        setup_postdata( $post ); ?>
+    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php
+        // Reset $post so the rest of the page works
+        wp_reset_postdata();
+    endif; ?>
+    <!-- -->            
+                
+                <div class="page-link-box-text"><?php the_sub_field("introductory_text"); ?>
 
 
 
-</div>
-<div class="page-link-box-icon-wrapper">
-<div class="page-link-box-icon">
-<?php 
-$image = get_sub_field('icon');
-if( !empty($image) ): ?>
-	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> 
-<?php endif; ?>
-</div>
-            <?php } ?>
+    </div>
+    <div class="page-link-box-icon-wrapper">
+    <div class="page-link-box-icon">
+    <?php 
+    $image = get_sub_field('icon');
+    if( !empty($image) ): ?>
+    	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> 
+    <?php endif; ?>
+    </div>
+                <?php } ?>
 
 
-</div>
-<div class="page-link-learn-more"><?php
-$post_object = get_sub_field('page');
-if($post_object) :
-    $post = $post_object;
-    // Overwrite $post
-    setup_postdata( $post ); ?>
-<a href="<?php the_permalink(); ?>">Learn More</a><?php
-    // Reset $post so the rest of the page works
-    wp_reset_postdata();
-endif; ?></div>
-</div>
-</div>
-<?php endwhile; endif; ?>
- 
- 
- 
+    </div>
+    <div class="page-link-learn-more"><?php
+    $post_object = get_sub_field('page');
+    if($post_object) :
+        $post = $post_object;
+        // Overwrite $post
+        setup_postdata( $post ); ?>
+    <a href="<?php the_permalink(); ?>">Learn More</a><?php
+        // Reset $post so the rest of the page works
+        wp_reset_postdata();
+    endif; ?></div>
+    </div>
+    </div>
+    <?php endwhile; endif; ?>
  
  </div>   
-
+</div>
 
 
      

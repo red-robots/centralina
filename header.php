@@ -6,15 +6,11 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/colorbox.css" />
-
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
-
 <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
 <link href='https://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
@@ -48,9 +44,11 @@ else { document.getElementById(d).style.display = "none"; }
 <script type="text/javascript">
 $(window).scroll(function() {
     if ($(this).scrollTop() > 195) { //I just used 200 for testing
-        $("#tester").css({ "position": "fixed", "top": 0 });
+        //$("#tester").css({ "position": "fixed", "top": 0 });
+      $("body").addClass('stickyNav');
     } else {
-        $("#tester").css({ "position": "absolute", "top": "195px" }); //same here
+      $("body").removeClass('stickyNav');
+        //$("#tester").css({ "position": "absolute", "top": "195px" }); //same here
     }   			
 });
 </script>
@@ -149,7 +147,7 @@ Serving as a leader to impact communities where adults age with choice, dignity 
 
 <div id="mobile-navigation">
 
-<a href="javascript:ReverseDisplay('uniquename')"> 
+<a class="menuBtn" href="javascript:ReverseDisplay('uniquename')"> 
 MENU &nbsp;&nbsp;&nbsp; <img src="<?php bloginfo('template_url'); ?>/images/down-arrow.png" alt="" border="0">
 </a>
 

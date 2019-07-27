@@ -130,7 +130,9 @@ function set_custom_cpt_columns($columns) {
     
     if($post_type=='workshops') {
         unset( $columns['date'] );
+        unset( $columns['views'] );
         $columns['workshop_logo'] = __( 'Logo', 'acstarter' );
+        $columns['views'] = __( 'Views', 'acstarter' );
         $columns['date'] = __( 'Date', 'acstarter' );
     }
     
