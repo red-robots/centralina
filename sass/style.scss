@@ -1941,8 +1941,14 @@ body.stickyNav #tester {
 .page-content-falls {
     padding-top: 45px;
     padding-bottom: 30px;
+    max-width: $maxwidth;
     width: 100%;
-    float: left;
+    margin: 0 auto;
+    @include clearfix();
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
 }
 
 #content-left {
