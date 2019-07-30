@@ -55,7 +55,7 @@
 		       // Homepage slider 'flexslider' scripts...
         wp_register_script(
             'imagesloaded',
-            get_bloginfo('template_directory') . '/js/imagesloaded.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.min.js',
             array('jquery') );
         wp_enqueue_script('imagesloaded');
 
