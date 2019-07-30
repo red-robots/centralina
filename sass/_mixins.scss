@@ -9,6 +9,7 @@ $sm: 576px;
 $md: 768px;
 $lg: 960px;
 $xl: 1200px;
+$contentwidth: 1100px;
 $maxwidth: 1030px;
 
 @mixin sm { @media (min-width: $sm) { @content; } }

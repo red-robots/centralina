@@ -36,7 +36,22 @@ Copyright Centralina Area Agency on Aging, 2016. All rights reserved.  | Equal O
 </div>
 	
 
-    
+<!-- sticky nav -->
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$(window).scroll(function() {
+	    if ($(this).scrollTop() > 300) { 
+	      $("body").addClass('stickyNav');
+	    } else {
+	      $("body").removeClass('stickyNav');
+	    }   			
+	});
+});
+</script>
+
+
+<!-- sticky nav -->
 
 <?php wp_footer(); ?>
 

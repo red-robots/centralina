@@ -39,23 +39,6 @@ else { document.getElementById(d).style.display = "none"; }
 
 <!-- mobile nav -->
 
-<!-- sticky nav -->
-
-<script type="text/javascript">
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 195) { //I just used 200 for testing
-        //$("#tester").css({ "position": "fixed", "top": 0 });
-      $("body").addClass('stickyNav');
-    } else {
-      $("body").removeClass('stickyNav');
-        //$("#tester").css({ "position": "absolute", "top": "195px" }); //same here
-    }   			
-});
-</script>
-
-
-<!-- sticky nav -->
-
 
 <?php the_field('google_analytics', 'option'); ?>
 
@@ -70,7 +53,7 @@ $(window).scroll(function() {
 
 <div id="donate"><a href="<?php bloginfo('url'); ?>/donate"><img src="<?php bloginfo('template_url'); ?>/images/donate.png" alt="" border="0">Why?</a></div>
 
-<div id="main">
+<div id="outer_wrap" class="clear">
 <div id="main2">
 
 

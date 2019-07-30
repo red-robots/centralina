@@ -83,6 +83,10 @@ body {
     clear: both;
 }
 
+a {
+    @include transition(all ease .3s);
+}
+
 a:link {
     color: #8961AF;
     text-decoration: none;
@@ -319,26 +323,31 @@ hr {
     width: 100%;
     float: left;
     overflow-x: hidden;
-}
-
-#main {
-    max-width: 1100px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    @include clearfix();
-    @media screen and (max-width:1029px) {
-        padding-left: 30px;
-        padding-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include lg {
+        min-height: 600px;
+        padding-left: 0;
+        padding-right: 0;
     }
+}
+#outer_wrap {
+    max-width: $contentwidth;
+    width: 100%;
+    margin: 0 auto;
+}
+#main {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+    @include clearfix();
     &:before,&:after {
-        content: " "; 
-        display: table;
+        content: " "; display: table;
     }
 }
 
 #main2 {
-    max-width: 1100px;
+    max-width: $contentwidth;
     width: 100%;
     float: left;
     background-color: #ffffff;
@@ -1922,20 +1931,18 @@ body.stickyNav #tester {
     padding-top: 45px;
     padding-bottom: 30px;
     padding-left: 0;
-    *zoom: 1;
-    clear: both;
-    &:before,
-    &:after {
+    @include clearfix();
+    &:before, &:after {
         content: " ";
         display: table;
     }
 }
 
 .page-content-falls {
-    width: 1030px;
-    margin: 0 auto;
     padding-top: 45px;
     padding-bottom: 30px;
+    width: 100%;
+    float: left;
 }
 
 #content-left {
@@ -2384,11 +2391,12 @@ hr {
 }
 
 #left-sidebar {
-    width: 233px;
-    height: auto;
+    width: 100%;
     float: left;
-    margin-right: 50px;
     margin-bottom: 20px;
+    @include lg {
+        width: 26%;
+    }
 }
 
 #left-sidebar-subnav {
@@ -2399,23 +2407,24 @@ hr {
 
 #left-sidebar-subnav ul {
     background-color: #EDEDED;
-    margin-bottom: 0px;
-    width: 100%;
-    margin-top: 0px;
+    margin: 0 0;
+    padding: 0 0;
+    list-style: none;
 }
 
 #left-sidebar-subnav li {
     background: none;
     padding-left: 0px;
     margin-bottom: 0px;
-    /* font-size: 18px; */
     text-align: right;
     border-bottom: 1px dotted #A9A9A9;
-
+    &.active a {
+        border-right: 6px solid #009839;
+    }
 }
 
 #left-sidebar-subnav a {
-    padding: 14px 10px 14px 0px;
+    padding: 14px 10px;
     display: inline-block;
 }
 
@@ -2679,9 +2688,12 @@ hr {
 }
 
 #page-content-text {
-    width: 690px;
-    float: right;
-    padding-right: 30px;
+    width: 100%;
+    float: left;
+    @include lg {
+        width: 70%;
+        float: right;
+    }
 }
 
 .alignleft, .post img.alignleft {
@@ -3810,13 +3822,60 @@ html[xmlns] .flexslider2 .slides {
         content: " "; 
         display: table;
     }
+    &.main {
+        padding-top: 45px;
+        padding-bottom: 45px;
+        float: left;
+        @include lg {
+            float: none;
+        }
+    }
+    &.pb45 {
+        padding-bottom: 45px;
+    }
+    &.fleft {
+        float: left;
+    }
+}
+.content-wrapper {
+    width: 100%;
+    float: left;
+    padding-bottom: 30px;
 }
 .main-content {
     padding-top: 50px;
     padding-bottom: 50px;
 }
 .pagetitle {
+    margin-top: 0;
     margin-bottom: 20px;
+}
+.ws-description {
+    width: 100%;
+    margin-bottom: 20px;
+    float: left;
+    @include lg {
+        width: 71%;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
+.ws-logo {
+    width: 100%;
+    float: left;
+    border: 1px solid #CCC;
+    padding: 15px;
+    margin-top: 10px;
+    @include lg {
+        width: 25%;
+        float: right;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 .entry-content.border-bottom {
     padding-bottom: 20px;
@@ -4820,12 +4879,6 @@ html[xmlns] .flexslider2 .slides {
         margin: 20px 0;
     }
 
-    #page-content-text {
-        width: 100%;
-        float: left;
-        padding-right: 0px;
-    }
-
     .page-content-falls {
         width: 90%;
     }
@@ -4834,14 +4887,6 @@ html[xmlns] .flexslider2 .slides {
         width: 100%;
         float: left;
         padding-bottom: 10px;
-    }
-
-    #left-sidebar {
-        width: 100%;
-        height: auto;
-        float: left;
-        margin-right: 0px;
-        margin-bottom: 20px;
     }
 
     #site-search-text {
