@@ -337,25 +337,24 @@ hr {
     margin: 0 auto;
 }
 #main {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0;
+    padding-right: 0;
     margin: 0 auto;
     @include clearfix();
     &:before,&:after {
         content: " "; display: table;
     }
+    @include lg {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 #main2 {
-    max-width: $contentwidth;
+    max-width: 100%;
     width: 100%;
     float: left;
     background-color: #ffffff;
-    @include clearfix();
-    &:before,&:after {
-        content: " "; 
-        display: table;
-    }
 }
 
 .post-container {
@@ -4886,10 +4885,6 @@ html[xmlns] .flexslider2 .slides {
         width: 100%;
         height: auto;
         margin: 20px 0;
-    }
-
-    .page-content-falls {
-        width: 90%;
     }
 
     #site-search {
