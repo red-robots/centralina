@@ -3047,6 +3047,10 @@ ol.pings h3 {
   background-image: none;
 }
 
+#access ul > li > a {
+  border-bottom: 2px solid transparent;
+}
+
 #access li:hover > a, #access ul ul :hover > a, #access a:focus {
   color: #E5E5E5;
   /* sub only */
@@ -3056,7 +3060,7 @@ ol.pings h3 {
   color: #ffffff;
   /* main nav */
   /*margin-top: -2px;bw*/
-  border-bottom: 2px solid #ffffff;
+  border-bottom-color: #FFF;
 }
 
 #access ul li:hover > ul {
