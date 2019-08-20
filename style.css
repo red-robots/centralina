@@ -2691,6 +2691,43 @@ hr {
   /* font-size: 18px; */
 }
 
+.sidebarNavs {
+  width: 100%;
+  float: left;
+  margin-bottom: 5px;
+}
+.sidebarNavs ul {
+  margin: 0 0;
+  list-style: none;
+}
+.sidebarNavs .menu li {
+  text-align: right;
+  background: none !important;
+  margin: 0 0 !important;
+  padding: 0 0 !important;
+  border-top: 1px dotted #A9A9A9;
+}
+.sidebarNavs .menu li:first-child {
+  border-top: none;
+}
+.sidebarNavs .menu a {
+  display: block;
+  color: #525355;
+  text-decoration: none;
+  padding: 14px 10px;
+  border-right: 6px solid #A2A2A2;
+  font-size: 18px;
+  background: #EDEDED;
+}
+.sidebarNavs .menu a:hover {
+  color: #009839;
+  border-right-color: #009839;
+}
+.sidebarNavs .menu li.current_page_item a {
+  color: #525355;
+  border-right-color: #009839;
+}
+
 #ombudsman-staff {
   width: 100%;
   float: left;
@@ -3940,6 +3977,17 @@ html[xmlns] .flexslider2 .slides {
   margin-bottom: 20px;
 }
 
+.entry-header {
+  margin-bottom: 25px;
+}
+.entry-header h1 {
+  margin: 0 0;
+}
+.entry-header .subtitle {
+  font-size: 16px;
+  font-style: italic;
+}
+
 .ws-description {
   width: 100%;
   margin-bottom: 20px;
@@ -4004,26 +4052,37 @@ html[xmlns] .flexslider2 .slides {
 }
 @media (min-width: 960px) {
   .workshop-list .fbox {
+    padding: 10px 15px;
     width: 33.3%;
+    margin: 30px 0;
   }
 }
 .workshop-list .fbox .inside {
   height: 100%;
   padding: 20px 20px;
   position: relative;
-  border: 1px solid #049841;
 }
 @media (min-width: 768px) {
   .workshop-list .fbox .inside {
     padding-bottom: 56px;
   }
 }
+.workshop-list .titlewrap {
+  margin-bottom: 10px;
+  text-align: center;
+}
 .workshop-list h2.title {
-  margin: 0 0 20px;
+  margin: 0 0 0;
   line-height: 1.3;
+  font-size: 20px;
+}
+.workshop-list .subtitle {
+  font-size: 15px;
+  font-style: italic;
+  color: #000;
 }
 .workshop-list a {
-  color: #049841;
+  color: #000;
   -webkit-transition: all ease-out 0.3s;
   -moz-transition: all ease-out 0.3s;
   -o-transition: all ease-out 0.3s;
@@ -4036,9 +4095,7 @@ html[xmlns] .flexslider2 .slides {
 .workshop-list .morebtn {
   margin-top: 10px;
   display: block;
-  padding: 6px 15px 7px;
-  color: #FFF;
-  background: #049841;
+  width: 100%;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -4046,10 +4103,17 @@ html[xmlns] .flexslider2 .slides {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
   }
 }
-.workshop-list .morebtn:hover {
+.workshop-list .morebtn a {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  background: #049841;
+  text-align: center;
+  padding: 6px 20px 7px;
+}
+.workshop-list .morebtn a:hover {
   background: #15d665;
 }
 .workshop-list .workshoplogo {
@@ -4057,8 +4121,7 @@ html[xmlns] .flexslider2 .slides {
 }
 .workshop-list .imgwrap {
   display: inline-block;
-  width: 110px;
-  padding: 8px;
+  width: 150px;
   margin-bottom: 15px;
 }
 .workshop-list .imgwrap span {

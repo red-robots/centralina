@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
 
-
-
 <?php while ( have_posts() ) : the_post();
 $pageContent = get_the_content();
 $pageTitle = get_the_title(); 
@@ -27,6 +25,20 @@ $resources = get_field("resources"); ?>
 
 
 <div id="left-sidebar">
+
+<?php  
+$pid = get_the_ID();
+$parentID = wp_get_post_parent_id($pid);
+if($parentID==38) { /* Health & Wellness */ ?>
+
+<?php if (is_nav_menu(15)) { ?>
+<div class="sidebarNavs">
+	<?php wp_nav_menu( array( 'menu' => 15,'menu_id'=>'wellness' ) ); ?>
+</div>
+<?php } ?>
+
+<?php } ?>
+
 
 <div id="left-sidebar-subnav">
 
@@ -110,9 +122,9 @@ if( !empty($image) ): ?>
 <!-- -->
 
 <div id="left-sidebar-calendar">
-<div id="left-sidebar-calendar-padding">
-<a href="<?php the_field("calendar_link_url"); ?>"><?php the_field("calendar_link_title"); ?></a>
-</div>
+	<div id="left-sidebar-calendar-padding">
+	<a href="<?php the_field("calendar_link_url"); ?>"><?php the_field("calendar_link_title"); ?></a>
+	</div>
 </div>
 
 

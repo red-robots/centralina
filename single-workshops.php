@@ -8,9 +8,17 @@
 					<?php 
 						$logo = get_field('workshop_logo'); 
 						$description = get_field('workshop_description'); 
+						$secondary_title = get_field('secondary_title');
 					?>
 					<div id="page-content-text">
-						<h1 class="pagetitle"><?php the_title(); ?></h1>
+						<div class="entry-header">
+							<h1 class="pagetitle"><?php the_title(); ?></h1>
+							<?php if ($secondary_title) { ?>
+							<div class="subtitle"><?php echo $secondary_title ?></div>	
+							<?php } ?>
+						</div>
+						
+
 						<div class="ws-description <?php echo ($logo) ? 'half':'full'?>">
 							<?php echo $description ?>
 						</div>

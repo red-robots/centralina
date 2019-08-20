@@ -29,6 +29,7 @@ get_header(); ?>
 					$content = ($content) ? strip_shortcodes( strip_tags($content) ) : '';
 					$short_description = ($content) ? shortenText($content,100,".","...") : '';
 					$px = get_bloginfo('template_url') . '/images/square.png';
+					$secondary_title = get_field('secondary_title');
 					?>
 					<div class="fbox">
 						<div class="inside clear">
@@ -37,9 +38,17 @@ get_header(); ?>
 								<span class="imgwrap"><span style="background-image:url('<?php echo $logo['url']?>')"><img src="<?php echo $px; ?>" alt="" /></span></span>
 							</div>		
 							<?php } ?>
-							<h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-							<div class="description"><?php echo $short_description; ?></div>
-							<a href="<?php echo get_permalink(); ?>" class="morebtn">Learn More</a>
+							<div class="titlewrap">
+								<h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<?php if ($secondary_title) { ?>
+								<div class="subtitle"><?php echo $secondary_title ?></div>
+								<?php } ?>
+							</div>
+
+							<div class="morebtn">
+								<a href="<?php echo get_permalink(); ?>">Learn More</a>
+							</div>
+							
 						</div>
 					</div>
 				<?php endwhile; wp_reset_postdata(); ?>

@@ -2616,6 +2616,43 @@ hr {
     /* font-size: 18px; */
 }
 
+.sidebarNavs {
+    width: 100%;
+    float: left;
+    margin-bottom: 5px;
+    ul {
+        margin: 0 0;
+        list-style: none;
+    }
+    .menu li {
+        text-align: right;
+        background: none!important;
+        margin: 0 0!important;
+        padding: 0 0!important;
+        border-top: 1px dotted #A9A9A9;
+    }
+    .menu li:first-child {
+        border-top: none;
+    }
+    .menu a {
+        display: block;
+        color: #525355;
+        text-decoration: none;
+        padding: 14px 10px;
+        border-right: 6px solid #A2A2A2;
+        font-size: 18px;
+        background: #EDEDED;
+        &:hover {
+            color: #009839;
+            border-right-color: #009839;
+        }
+    }
+    .menu li.current_page_item a {
+        color: #525355;
+        border-right-color: #009839;
+    }
+}
+
 #ombudsman-staff {
     width: 100%;
     float: left;
@@ -3858,6 +3895,16 @@ html[xmlns] .flexslider2 .slides {
     margin-top: 0;
     margin-bottom: 20px;
 }
+.entry-header {
+    margin-bottom: 25px;
+    h1 {
+        margin: 0 0;
+    }
+    .subtitle {
+        font-size: 16px;
+        font-style: italic;
+    }
+}
 .ws-description {
     width: 100%;
     margin-bottom: 20px;
@@ -3906,26 +3953,35 @@ html[xmlns] .flexslider2 .slides {
             width: 50%;
         }
         @include lg {
+            padding: 10px 15px;
             width: 33.3%;
+            margin: 30px 0;
         }
         .inside {
             height: 100%;
-            // padding-top: 20px;
-            // padding-bottom: 0;
             padding: 20px 20px;
             position: relative;
-            border: 1px solid $green;
             @include md {
                 padding-bottom: 56px;
             }
         }
     }
+    .titlewrap {
+        margin-bottom: 10px;
+        text-align: center;
+    }
     h2.title {
-        margin: 0 0 20px;
+        margin: 0 0 0;
         line-height: 1.3;
+        font-size: 20px;
+    }
+    .subtitle {
+        font-size: 15px;
+        font-style: italic;
+        color: #000;
     }
     a {
-        color: $green;
+        color: #000;
         @include transition(all ease-out .3s);
     }
     h2.title a:hover {
@@ -3934,17 +3990,22 @@ html[xmlns] .flexslider2 .slides {
     .morebtn {
         margin-top: 10px;
         display: block;
-        padding: 6px 15px 7px;
-        color: #FFF;
-        background: $green;
+        width: 100%;
         text-align: center;
         @include md {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
         }
-        &:hover {
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #FFF;
+            background: $green;
+            text-align: center;
+            padding: 6px 20px 7px;
+        }
+        a:hover {
             background: $light_green;
         }
     }
@@ -3953,9 +4014,7 @@ html[xmlns] .flexslider2 .slides {
     }
     .imgwrap {
         display: inline-block;
-        width: 110px;
-        padding: 8px;
-        // border: 1px solid #CCC;
+        width: 150px;
         span {
             display: block;
             float: left;
