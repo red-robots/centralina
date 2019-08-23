@@ -2727,6 +2727,9 @@ hr {
   color: #525355;
   border-right-color: #009839;
 }
+.sidebarNavs .menu li.current_page_item:hover a {
+  color: #009839;
+}
 
 #ombudsman-staff {
   width: 100%;
@@ -3119,9 +3122,10 @@ ol.pings h3 {
   color: #000000;
 }
 
-#access .current-menu-item > a, #access .current-menu-ancestor > a, #access .current_page_item > a, #access .current_page_ancestor > a {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
+#navigation .menu .current-page-parent > a,
+#navigation .menu .current_page_item > a {
+  color: #FFF;
+  border-bottom: 2px solid #FFF;
 }
 
 #menu-item-27 {
