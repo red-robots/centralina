@@ -120,12 +120,13 @@ if( !empty($image) ): ?>
 <?php wp_reset_postdata(); ?> 
 
 <!-- -->
-
+<?php if ( get_field('calendar_link_url') ) { ?>
 <div id="left-sidebar-calendar">
 	<div id="left-sidebar-calendar-padding">
 	<a href="<?php the_field("calendar_link_url"); ?>"><?php the_field("calendar_link_title"); ?></a>
 	</div>
 </div>
+<?php } ?>
 
 
 </div>
