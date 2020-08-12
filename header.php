@@ -65,8 +65,33 @@ else { document.getElementById(d).style.display = "none"; }
 
 
 <div id="header">
+
+
+  <div class="topbar">
+      <div id="site-search"> <!-- --> 
+        <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+          <div>
+            <input name="s" type="text" id="s" placeholder="enter search terms here" value="<?php echo wp_specialchars($s, 1); ?>" size="15" />
+            <input type="submit" id="searchsubmit" value="go" class="btn" />
+          </div>
+        </form>
+        <div id="site-search-text">Site Search</div>
+      </div>
+
+      <div id="social-icons">
+        <a href="<?php the_field('facebook', 'option'); ?>" target="_blank">
+          <img src="<?php bloginfo('template_url'); ?>/images/icon-facebook.png" alt="" border="0">
+        </a>
+      <a href="<?php the_field('twitter', 'option'); ?>" target="_blank">
+        <img src="<?php bloginfo('template_url'); ?>/images/icon-twitter.png" alt="" border="0">
+      </a>
+      </div>
+      <div id="header-content1-text">Charlotte, NC & Surrounding Counties</div>
+  </div>
+
+
     <div id="logo">
-    <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/centralina-logo.png" alt="" border="0"></a> 
+    <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/new-logo.png" alt="" border="0"></a> 
     </div><!-- #logo -->
     
 <div id="header-content-wrapper">
@@ -77,23 +102,14 @@ else { document.getElementById(d).style.display = "none"; }
 
 
 
-<div id="site-search"> <!-- --> 
- <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-<div><input name="s" type="text" id="s" placeholder="enter search terms here" value="<?php echo wp_specialchars($s, 1); ?>" size="15" />
-<input type="submit" id="searchsubmit" value="go" class="btn" />
-</div>
-</form><div id="site-search-text">Site Search</div>
-  <!-- --></div>
-  <div id="social-icons"><a href="<?php the_field('facebook', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-facebook.png" alt="" border="0"></a>
-<a href="<?php the_field('twitter', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-twitter.png" alt="" border="0"></a></div>
-  <div id="header-content1-text">Charlotte, NC & Surrounding Counties</div>
+
 
 </div>
 
-<div id="header-text">
+<!-- <div id="header-text">
 <div id="header-text1">Aging in Action</div>
 Serving as a leader to impact communities where adults age with choice, dignity and independence.
-</div>
+</div> -->
 
 <div id="header-menu">
 <?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>

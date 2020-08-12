@@ -4,7 +4,7 @@ Theme URI: https://bellaworksweb.com/
 Author: Bellaworks
 Author URI: https://bellaworksweb.com/
 Description: Description
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellaworks
@@ -390,28 +390,44 @@ blockquote {
     float: left;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
     @include xl {
         padding-left: 0;
         padding-right: 0;
     }
 }
-
+.topbar {
+    width: 100%;
+    position: relative;
+    background-color: rgba(#000,.1);
+    float: left;
+    padding: 3px 0;
+    display: none;
+    @include lg {
+        display: block;
+    }
+}
 #logo {
     width: 100%;
     float: left;
     padding-top: 5px;
     text-align: center;
+    clear: both;
     @include lg {
-        width: 25%;
+        // width: 35%;
         text-align: left;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        clear: none;
     }
     a {
         display: inline-block;
-        width: 135px;
+        width: 80%;
         float: none;
         @include lg {
             float: left;
-            width: 220px;
+            width: 350px;
         }
     }
     img {
@@ -440,7 +456,7 @@ blockquote {
     position: relative;
     font-size: 16px;
     color: #78787A;
-    padding-top: 10px;
+    // padding-top: 10px;
     text-align: right;
     @include lg {
         float: right;
@@ -489,6 +505,7 @@ blockquote {
     text-align: right;
     position: relative;
     left: 50px;
+
     @include lg {
         left: 0;
     }
@@ -517,6 +534,7 @@ blockquote {
 #site-search {
     width: 260px;
     margin: 0 auto;
+    font-size: 14px;
     @include lg {
         width: 315px;
         float: right;
@@ -533,6 +551,7 @@ blockquote {
     position: relative;
     top: 10px;
     left: -50px;
+    font-size: 14px;
     @include lg {
         width: auto;
         display: inline-block;
@@ -570,11 +589,22 @@ blockquote {
     float: right;
     padding-top: 5px;
     padding-left: 10px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
     @include lg {
         max-width: 185px;
     }
     input[type="text"] {
         width: 135px;
+        padding: 4px 4px;
+        margin: 2px 0 0 0;
+        font-size: 14px;
+    }
+    input#searchsubmit {
+        // margin-top: 2px;
+        font-size: 14px;
+        padding: 3px 4px;
     }
 }
 
@@ -4389,6 +4419,7 @@ html[xmlns] .flexslider2 .slides {
     }
     #searchform input[type=text] {
         width: 160px;
+        padding: 2px 4px;
     }
     #site-search-text {
         display: none;
@@ -4413,9 +4444,7 @@ html[xmlns] .flexslider2 .slides {
         transform: scale(0.8);
     }
 
-    #logo a {
-        width: 120px;
-    }
+ 
 
     .project-box-wrapper {
         width: 100%;
