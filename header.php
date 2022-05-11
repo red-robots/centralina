@@ -6,7 +6,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=2.1" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/colorbox.css" />
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
@@ -82,16 +82,21 @@ else { document.getElementById(d).style.display = "none"; }
         <a href="<?php the_field('facebook', 'option'); ?>" target="_blank">
           <img src="<?php bloginfo('template_url'); ?>/images/icon-facebook.png" alt="" border="0">
         </a>
-      <a href="<?php the_field('twitter', 'option'); ?>" target="_blank">
+      <!-- <a href="<?php the_field('twitter', 'option'); ?>" target="_blank">
         <img src="<?php bloginfo('template_url'); ?>/images/icon-twitter.png" alt="" border="0">
-      </a>
+      </a> -->
       </div>
       <div id="header-content1-text">Charlotte, NC & Surrounding Counties</div>
   </div>
 
 
     <div id="logo">
-    <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/new-logo.png" alt="" border="0"></a> 
+      <a class="centralina" href="https://centralina.org" target="_blank">
+        <img src="<?php bloginfo('template_url'); ?>/images/centralina.png" alt="" border="0">
+      </a>
+    <a class="aging" href="<?php bloginfo('url'); ?>">
+      <img src="<?php bloginfo('template_url'); ?>/images/new-logo.png" alt="" border="0">
+    </a> 
     </div><!-- #logo -->
     
 <div id="header-content-wrapper">
