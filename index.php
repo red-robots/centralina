@@ -277,7 +277,7 @@
 
 					</ul>
 					<div class="see-more-link-text"><a
-							href="<?php bloginfo( 'url' ); ?>/educational-opportunities/events/">See More</a></div>
+							href="<?php bloginfo( 'url' ); ?>/educational-opportunities/">See More</a></div>
 
 
 				</div>

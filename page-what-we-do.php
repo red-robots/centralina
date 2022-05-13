@@ -180,7 +180,7 @@
     	<?php  endwhile; endif; wp_reset_postdata();  // close loop and reset the query ?>
         
 
-</ul><div id="see-more-link"><a href="<?php bloginfo('url'); ?>/educational-opportunities/events/"><img src="<?php bloginfo('template_url'); ?>/images/see-more.png" alt="" border="0"></a> <div class="see-more-link-text"><a href="<?php bloginfo('url'); ?>/educational-opportunities/events/">See More</a></div></div>
+</ul><div id="see-more-link"><a href="<?php bloginfo('url'); ?>/educational-opportunities/"><img src="<?php bloginfo('template_url'); ?>/images/see-more.png" alt="" border="0"></a> <div class="see-more-link-text"><a href="<?php bloginfo('url'); ?>/educational-opportunities/">See More</a></div></div>
 </div>
 </div>
 </div>

@@ -1180,6 +1180,7 @@ body.stickyNav #tester {
 
 #left-sidebar-events-feed li a {
   font-size: 14px;
+  color: #fff;
 }
 
 #home-box1 li {
@@ -1190,8 +1191,16 @@ body.stickyNav #tester {
   list-style-type: none !important;
 }
 
+#home-box1 a {
+  color: #fff;
+}
+
 #home-box1 li a {
   font-size: 14px;
+}
+
+#home-box1 #see-more-link a {
+  color: #fff;
 }
 
 #home-box1 #see-more-link {
@@ -1212,6 +1221,10 @@ body.stickyNav #tester {
   width: 100%;
 }
 
+.see-more-link-text a {
+  color: #fff;
+}
+
 #home-box1 .see-more-link-text a {
   padding-top: 10px;
   font-size: 18px;
@@ -1220,6 +1233,7 @@ body.stickyNav #tester {
   float: none;
   padding-right: 10px;
   padding-left: 10px;
+  color: #fff;
 }
 
 .home-box-learn-more {
